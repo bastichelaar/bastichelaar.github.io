@@ -62,32 +62,6 @@
 
 {% include scripts.html %}	        
 
-<script>
-// Vanilla JS
-var data = JSON.stringify({
-  "name": "testje",
-  "client": :id,
-  "timestamp": +new Date,
-  "data": {
-    "subpage_visited": true,
-    "page": window.location.href
-  }
-});
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "https://app.userengage.io/api/public/events/");
-xhr.setRequestHeader("authorization": "Token 1ZaWq0DuZIFuuwp9IhqvzYXdLxliTtoYkPAhjudn39nX9CytdEN9PXq7pTBkYHUq");
-xhr.setRequestHeader("content-type", "application/json");
-
-xhr.send(data);
-</script>
+<a href="#" onclick="userengage('event.test_event', {'sku': '7', 'size': '39', 'color': 'teal', 'price': '39'})">CLICK ME!</a>
 </body>
 </html>
